@@ -898,8 +898,10 @@ See OpenXsensor https://github.com/openXsensor/
 *      To activate this function, put YES instead of NO in line #define CALCULATE_RPM  .
 *      Note: The digital pin 8 (PB0/ICP) is the only one to be used to measure RPM.
 *            for Frsky protocol, the value calculated by oXs is in Hertz (and not in roration per minute) and the conversion is done by the TX
+*      Default sends data in HZ - with radio multipying by 60 to do RPM.  You can do this on sensor by setting value to NO
 ************************************************************************************************************************
 #define CALCULATE_RPM     NO 
+#define SEND_RPM_AS_HZ    YES                
 #define PULSES_PER_ROTATION 2
 
 **** 8 - Persistent memory settings ************************************************************************************
@@ -1304,5 +1306,3 @@ See OpenXsensor https://github.com/openXsensor/
 * Just fill in test1.value (or 2, 3) with an int32_t and test1.available (or 2, 3) with true and add those OXS measurements in the data to be sent section. 
 ************************************************************************************************************************
 //#define DEBUG  // !! is to define in file oXs_config_macros.h
-
-

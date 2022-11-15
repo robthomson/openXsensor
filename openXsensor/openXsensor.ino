@@ -931,7 +931,15 @@ void readSensors() {
         } else {
             RpmValue = 0 ;
         }
-        sport_rpm.value = RpmValue ;
+
+#if defined(MEASURE_RPM) && (SEND_RPM_AS_HZ == YES)
+          sport_rpm.value = RpmValue ;
+#else
+          sport_rpm.value = RpmValue * 60;
+#endif  
+        
+        
+        
         sport_rpm.available = true ;    
         lastRpmMillis = millis() ;
 #ifdef DEBUG_RPM
@@ -2197,7 +2205,3 @@ int freeRam () {
   return (int) &v - (__brkval == 0 ? (int) &__heap_start : (int) __brkval); 
 }
 #endif // End DEBUG
-
-
-
-

@@ -102,7 +102,8 @@
 #define AN_ADS1115_IS_CONNECTED   NO                 // select between YES , NO
 
 // --------- 7 - RPM (rotations per minute) settings ---------                     see oXs_config_advanced.h for additional parameter about the number of pulses per rotation
-#define CALCULATE_RPM     NO                         // select between YES , NO       
+#define CALCULATE_RPM     YES                         // select between YES , NO   
+#define SEND_RPM_AS_HZ    NO                        // deliver value as HZ or RPM to radio (mulitply by 60)
 
 // --------- 8 - Persistent memory settings ---------                             ( see also oXs_config_advanced.h - used mainly when a flow sensor is connected )
 #define SAVE_TO_EEPROM     NO
@@ -130,5 +131,3 @@
 
 
 #endif// End define OXS_CONFIG_BASIC_h
-
-
